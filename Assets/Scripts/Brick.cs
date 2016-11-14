@@ -41,7 +41,7 @@ public class Brick : MonoBehaviour {
 			breakableCount--;
 
 			GameObject puffSmoke = Instantiate (smoke, this.transform.position, Quaternion.identity) as GameObject;
-			puffSmoke.particleSystem.startColor = gameObject.GetComponent<SpriteRenderer>().color;
+			puffSmoke.GetComponent<ParticleSystem>().startColor = gameObject.GetComponent<SpriteRenderer>().color;
 
 			levelManager.BrickDestroyed();
 			//print (breakableCount);

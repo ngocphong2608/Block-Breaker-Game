@@ -21,7 +21,7 @@ public class Ball : MonoBehaviour {
 
 			if (Input.GetMouseButtonDown(0)){
 				hasStarted = true;
-				this.rigidbody2D.velocity = new Vector2(2f, 10f);
+				this.GetComponent<Rigidbody2D>().velocity = new Vector2(2f, 10f);
 			}
 		}
 	}
@@ -31,8 +31,8 @@ public class Ball : MonoBehaviour {
 		//print (tweak);
 
 		if (hasStarted) {
-			rigidbody2D.velocity += tweak;
-			audio.Play ();
+			GetComponent<Rigidbody2D>().velocity += tweak;
+			GetComponent<AudioSource>().Play ();
 		}
 	}
 }
